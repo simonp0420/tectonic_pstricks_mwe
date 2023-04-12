@@ -1,0 +1,114 @@
+
+\chapter{Periodicity, Reciprocal Lattice, Floquet Modes}
+\label{chap:periodicity}
+
+This chapter discusses the direct and reciprocal lattice vectors, and
+defines the Floquet modes that can exist in the dielectric regions.
+
+\section{The Direct Lattice}
+We consider a structure with discrete translational invariance in two space
+dimensions.  The periodicity is characterized by the {\em direct lattice
+  vectors} $\s_1$ and $\s_2$, a pair of real vectors satisfying
+\begin{equation}
+  \s_1 \bdot \z = \s_2 \bdot \z = 0, \quad A \equiv \z \bdot \s_1 \cross \s_2 > 0.
+\end{equation}
+The structure is invariant to a translation consisting of any integer number of
+shifts in the $\s_1$ or $\s_2$ directions.  Such periodicity
+is exhibited by idealized models of frequency selective surfaces
+(FSSs) and phased arrays, for example.
+This periodicity gives rise to the concept of the {direct lattice},
+the set of points $\vecrho_{mn} = \x x_{mn} + \y y_{mn}$ satisfying
+\begin{equation}
+  \vecrho_{mn} = m \s_1 + n \s_2, \quad \text{for $m$ and $n$ any integers.}
+\end{equation}
+A periodic structure and its direct lattice is shown in
+Figure~\ref{fig:direct}.
+\begin{figure}[htbp]
+  \begin{center}
+        \fbox{%
+      \psset{unit=0.005in}
+      \pspicture*(-1,-10)(660,410)
+                                % Paint it on a white, opaque background:
+      \psframe*[linecolor=white,fillcolor=white,fillstyle=solid](-1,-10)(660,410)
+      \multips(-60.62,-105.0)(60.62,105.0){5}%
+      {%
+        \multips(-242.48,0)(121.24,0){8}%
+        {%
+          \pspolygon(73.68,18.0)(108.18,18)(130.77,52.5)%
+          (108.18,87.0)(73.68,87.0)(51.096,52.5)%
+          %
+          \psline[linestyle=dashed,linewidth=0.5pt](0,0)(121.24,0)
+          \psline[linestyle=dashed,linewidth=0.5pt](0,0)(60.62,105.0)
+          \qdisk(0,0){1.5pt}
+        }%
+      }
+    \rput(181.86,105){%
+      \psline[linewidth=1pt]{->}(0,0)(121.24,0)
+      \psline[linewidth=1pt]{->}(0,0)(60.62,105.0)
+      \rput(90,-13){$\s_1$}
+      \rput[l](10,90){$\s_2$}
+      }
+    \endpspicture
+      }
+    \caption{A frequency selective surface consisting of a thin metal plate
+        with hexagonal perforations, and the associated direct
+        lattice. The location selected for the lattice origin is arbitrary.}
+    \label{fig:direct}
+  \end{center}
+\end{figure}
+
+\section{Periodic Boundary Conditions and the Unit Cell}
+\label{sec:pbcuc}
+We now assume that an electromagnetic excitation of some type is
+applied to the structure.  In the case of a FSS, the excitation takes
+the form of an incident plane wave.  In the case of a phased array,
+the excitation may be an incident plane wave, or perhaps a set of
+incoming waveguide modes in each of the excitation ports of the
+radiating elements.  Denote the spatial variation of the excitation by
+the function $V(\r)$.  We insist that the function $V$ satisfy the
+following quasi-periodicity condition:
+\begin{equation}
+  \label{eq:floquetbc}
+  V(\r + m\s_1 + n\s_2) = V(\r) e^{-j(m\psi_1 + n\psi_2)}, \quad
+  \text{for any integers $m$ and $n$}
+\end{equation}
+where $\psi_1$ and $\psi_2$ are given real numbers, which we will
+refer to as the ``unit cell incremental phase shifts''.  By the
+translational invariance of Maxwell's equations and given the discrete
+translational invariance of the structure, it is clear that all
+electromagnetic fields, charges, etc., resulting from the given
+excitation must also satisfy \eqref{eq:floquetbc}, which we refer to
+as the ``Floquet boundary condition.''
+
+Since the fields throughout the structure satisfy
+Equation~\eqref{eq:floquetbc}, it suffices to restrict consideration
+to a single unit cell $U$, defined\footnote{The definition of a unit
+  cell is not unique.  The present definition is most useful for our
+  purposes.}
+as the set of points $\r$
+satisfying
+\begin{equation}
+  \label{eq:unitcell}
+  U = \{\r: \; \r = \xi_1 \s_1 + \xi_2 \s_2 + \z z, \quad 0 \leq \xi_1 , \xi_2
+  \leq 1\},
+\end{equation}
+where $\xi_1$ and $\xi_2$ are the so-called ``normalized area
+coordinates,'' each constrained to the interval $[0,1]$.
+We seek a set of modes that can propagate in the unit cell, subject to
+an appropriate set of boundary conditions to be stated below.  Let
+$E(\r)$ be some rectangular component of electric or magnetic field
+evaluated at a point $\r = \x x + \y y + \z z = \xi_1 \s_1 + \xi_2
+\s_2 + \z z$ within the unit cell.  
+%Let $f(\xi_1,\xi_2) = 
+%E(\xi_1\s_1+\xi_2\s_2+\z z) =E(\r)$.
+Then the quasi-periodic boundary condition can be expressed as
+\begin{subequations}
+  \label{eq:cellfloquetbc}
+  \begin{align}
+    E(\s_1 + \xi_2 \s_2 + \z z) &= E(\xi_2 \s_2 + \z z) e^{-j\psi_1} \\
+    E(\xi_1 \s_1 + \s_2 + \z z) &= E(\xi_1 \s_1 + \z z) e^{-j\psi_2} 
+  \end{align}
+\end{subequations}
+  which must hold for all $z$ and for all $\xi_1$ and $\xi_2$ in the
+  interval $[0,1]$.  
+

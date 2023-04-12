@@ -1,0 +1,46 @@
+% -*- TeX-engine: xetex;  -*-
+\documentclass[
+letterpaper, % Stock and paper size.
+11pt, % Type size.
+oneside, 
+onecolumn, % Only one column of text on a page.
+openany, % A chapter may start on either a recto or verso page.
+]{memoir}
+
+%%% PACKAGES 
+%%%------------------------------------------------------------------------------
+
+%\usepackage[utf8]{inputenc} % Not needed with XeTeX
+\usepackage[T1]{fontenc}    %
+\usepackage[english]{babel} % English please
+
+
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{pstricks,pst-node,pstricks-add}
+\usepackage{multido}
+\usepackage[small,bf]{caption}
+\usepackage{enumitem}
+
+
+% Use amsmath (already included by newtx packages)
+% commands to make equations and figures be numbered within chapters: 
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+
+
+\usepackage{memhfixc}   %
+
+%%% THE DOCUMENT
+%%% Where all the important stuff is included!
+%%%-------------------------------------------------------------------------------
+
+\author{Peter S. Simon}
+\title{PSSFSS Theory Documentation}
+
+\input{macro.tex}
+
+\begin{document}
+
